@@ -1,5 +1,5 @@
 import EntryPage from "./components/EntryPage/EntryPage";
-// import GetStarted from "./components/GetStarted";
+import GetStarted from "./components/GetStarted/GetStarted";
 // import MainPage from "./components/MainPage";
 
 function App() {
@@ -7,8 +7,7 @@ function App() {
     <div className="wrapper">
       <div className="main">
         <EntryPage />
-        {/* <GetStarted />
-        <MainPage /> */}
+        <GetStarted />
       </div>
     </div>
   );

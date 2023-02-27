@@ -1,0 +1,30 @@
+.entry {
+  width: 100%;
+  height: 100vh;
+  background-color: $yellowBg;
+
+  &__section {
+    @include flex(center, center);
+    height: 100%;
+  }
+  &__title {
+    font-size: $mainTitle;
+    transition: $transition + 1s;
+    position: relative;
+    &::after {
+      position: absolute;
+      display: block;
+      content: "";
+      width: 0%;
+      height: 5px;
+      left: 0%;
+      transform: translate(-4px, -28px);
+      background-color: $darkGray;
+      transition: 1s;
+    }
+    &.active::after {
+      width: 110px;
+      left: 0%;
+    }
+  }
+}

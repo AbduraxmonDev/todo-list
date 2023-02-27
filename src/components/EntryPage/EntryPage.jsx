@@ -1,19 +1,21 @@
-import AddPopUp from "../AddPopUp/AddPopUp";
+import React, { useRef } from "react";
 
 function EntryPage() {
-  return (
-    <div className="container">
-      <div>
-        <button className="button">+</button>
-      </div>
-      <AddPopUp />
+  const titleRef = useRef();
 
-      <div style={{ background: "red" }}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-        reprehenderit, amet autem exercitationem suscipit, magnam officiis
-        distinctio culpa nostrum nulla expedita deleniti dolore veritatis iure
-        ducimus consequuntur commodi. Adipisci, omnis!
-      </div>
+  window.addEventListener("scroll", function (e) {
+    e.preventDefault();
+    // setAddClass(!addClass);
+    titleRef.current.classList.add("active");
+  });
+
+  return (
+    <div className="entry">
+      <section className="entry__section">
+        <h1 className="entry__title" ref={titleRef}>
+          todo
+        </h1>
+      </section>
     </div>
   );
 }
