@@ -17,7 +17,7 @@ function GetStarted() {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint quis
             animi corporis porro ad reprehenderit.
           </p>
-          <a href="/" className="banner__link">
+          <a href="/main" className="banner__link">
             Get started
           </a>
           <img src={Image} alt="images of 3 girls" className="banner__image" />

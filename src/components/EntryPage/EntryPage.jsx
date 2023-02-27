@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import GetStarted from "../GetStarted/GetStarted";
 
 function EntryPage() {
   const titleRef = useRef();
@@ -9,13 +10,16 @@ function EntryPage() {
   });
 
   return (
-    <section className="entry">
-      <div className="entry__content">
-        <h1 className="entry__title" ref={titleRef}>
-          todo
-        </h1>
-      </div>
-    </section>
+    <>
+      <section className="entry">
+        <div className="entry__content">
+          <h1 className="entry__title" ref={titleRef}>
+            todo
+          </h1>
+        </div>
+      </section>
+      <GetStarted />
+    </>
   );
 }
 

@@ -1,15 +1,18 @@
 import EntryPage from "./components/EntryPage/EntryPage";
-import GetStarted from "./components/GetStarted/GetStarted";
-// import MainPage from "./components/MainPage";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import MainPage from "./components/MainPage/MainPage";
 
 function App() {
   return (
-    <div className="wrapper">
-      <div className="main">
-        <EntryPage />
-        <GetStarted />
-      </div>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<EntryPage />} />
+          <Route path="/main" element={<MainPage />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 

@@ -1,0 +1,56 @@
+.main {
+  &__content {
+  }
+
+  &__header {
+    @include flex();
+  }
+
+  &__btn {
+    background: none;
+    border: 1px solid transparent;
+    font-size: $textSize44;
+    font-weight: 400;
+  }
+
+  &__body {
+    @include flex();
+  }
+
+  .checkbox {
+    margin-top: 20px;
+    position: sticky;
+
+    &__type {
+      @include flex();
+    }
+
+    &__item {
+      @include flex();
+      gap: 5px;
+      cursor: pointer;
+      padding: 7px 10px;
+      border-radius: $borderRad;
+      user-select: none;
+      &.active {
+        background: $bgcolor;
+      }
+
+      & p {
+        font-size: $textSize12;
+      }
+
+      &:not(last-child) {
+        margin-right: 5px;
+      }
+    }
+    .checkbox__input {
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border: 1px solid transparent;
+      border-radius: 50px;
+      background: indigo;
+    }
+  }
+}
