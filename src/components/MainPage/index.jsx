@@ -1,4 +1,13 @@
+import { useState } from "react";
+
 function MainPage() {
+  const [isActive, setIsActive] = useState(false);
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    setIsActive(!isActive);
+  };
+
   return (
     <>
       <div className="main">
@@ -13,16 +22,21 @@ function MainPage() {
             <div className="main__body">
               <div className="checkbox">
                 <div className="checkbox__type">
-                  <label className="checkbox__item active">
+                  <label
+                    onClick={handleClick}
+                    className={`checkbox__item ${isActive ? "active" : ""}`}
+                  >
                     <input
                       type="checkbox"
-                      name=""
                       className="checkbox__input"
                       id="checkbox"
                     />
-                    <p>work</p>
+                    work
                   </label>
-                  <label className="checkbox__item active">
+                  <label
+                    onClick={handleClick}
+                    className={`checkbox__item ${isActive ? "active" : ""}`}
+                  >
                     <input
                       type="checkbox"
                       name=""
@@ -31,16 +45,21 @@ function MainPage() {
                     />
                     <p>study</p>
                   </label>
-                  <label className="checkbox__item active">
+                  <label
+                    onClick={handleClick}
+                    className={`checkbox__item ${isActive ? "active" : ""}`}
+                  >
                     <input
                       type="checkbox"
-                      name=""
                       id="checkbox"
                       className="checkbox__input"
                     />
-                    <p>entertainment</p>
+                    entertainment
                   </label>
-                  <label className="checkbox__item active">
+                  <label
+                    onClick={handleClick}
+                    className={`checkbox__item ${isActive ? "active" : ""}`}
+                  >
                     <input
                       type="checkbox"
                       name=""
@@ -50,10 +69,10 @@ function MainPage() {
                     <p>family</p>
                   </label>
                 </div>
-                {/* <div className="checkbox__hide">
+                <label className="checkbox__hide">
                   <input type="checkbox" />
                   <p>Hide done tasks</p>
-                </div> */}
+                </label>
               </div>
             </div>
           </div>

@@ -1,7 +1,7 @@
-import EntryPage from "./components/EntryPage/EntryPage";
+import EntryPage from "./components/EntryPage";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import MainPage from "./components/MainPage/MainPage";
+import MainPage from "./components/MainPage";
 
 function App() {
   return (

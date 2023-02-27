@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import GetStarted from "../GetStarted/GetStarted";
+import GetStarted from "../GetStarted";
 
 function EntryPage() {
   const titleRef = useRef();

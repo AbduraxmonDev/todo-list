@@ -23,6 +23,7 @@
 
     &__type {
       @include flex();
+      flex-wrap: wrap;
     }
 
     &__item {
@@ -32,8 +33,9 @@
       padding: 7px 10px;
       border-radius: $borderRad;
       user-select: none;
+
       &.active {
-        background: $bgcolor;
+        background: red;
       }
 
       & p {
@@ -41,16 +43,38 @@
       }
 
       &:not(last-child) {
-        margin-right: 5px;
+        margin: 5px;
       }
     }
-    .checkbox__input {
+    &__input {
       appearance: none;
       width: 18px;
       height: 18px;
       border: 1px solid transparent;
       border-radius: 50px;
       background: indigo;
+      cursor: pointer;
+      &:nth-child(1) {
+        background: blue;
+      }
+    }
+
+    &__hide {
+      display: none;
+    }
+    @media screen and (min-width: 500px) {
+      &__type {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      &__hide {
+        @include flex();
+        margin-top: 100px;
+        gap: 5px;
+        user-select: none;
+        cursor: pointer;
+      }
     }
   }
 }
