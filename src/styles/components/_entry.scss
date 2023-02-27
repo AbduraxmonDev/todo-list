@@ -3,14 +3,16 @@
   height: 100vh;
   background-color: $yellowBg;
 
-  &__section {
+  &__content {
     @include flex(center, center);
     height: 100%;
   }
+
   &__title {
-    font-size: $mainTitle;
+    font-size: $textSize44;
     transition: $transition + 1s;
     position: relative;
+
     &::after {
       position: absolute;
       display: block;
@@ -18,13 +20,13 @@
       width: 0%;
       height: 5px;
       left: 0%;
-      transform: translate(-4px, -28px);
-      background-color: $darkGray;
-      transition: 1s;
+      transform: translate(-4px, -27px);
+      background-color: #5e5b51;
+      transition: 2s;
     }
+
     &.active::after {
       width: 110px;
-      left: 0%;
     }
   }
 }
