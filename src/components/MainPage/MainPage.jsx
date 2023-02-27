@@ -5,7 +5,9 @@ function MainPage() {
         <div className="container">
           <div className="main__content">
             <div className="main__header">
-              <h1 className="main__title">todo</h1>
+              <a href="/">
+                <h1 className="main__title">todo</h1>
+              </a>
               <button className="main__btn">+</button>
             </div>
             <div className="main__body">
