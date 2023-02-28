@@ -1,12 +1,31 @@
-import { useState } from "react";
+import React from "react";
+import Checkbox from "../Checkbox";
 
 function MainPage() {
-  const [isActive, setIsActive] = useState(false);
+  
 
-  const handleClick = (e) => {
-    e.preventDefault();
-    setIsActive(!isActive);
-  };
+  const checkboxLabels = [
+    {
+      id: 1,
+      name: "work",
+      color: "#cbc4ff",
+    },
+    {
+      id: 2,
+      name: "study",
+      color: "#c8e3f7",
+    },
+    {
+      id: 3,
+      name: "entertainment",
+      color: "#ffc3c6",
+    },
+    {
+      id: 4,
+      name: "family",
+      color: "#d3f1d0",
+    },
+  ];
 
   return (
     <>
@@ -21,54 +40,11 @@ function MainPage() {
             </div>
             <div className="main__body">
               <div className="checkbox">
-                <div className="checkbox__type">
-                  <label
-                    onClick={handleClick}
-                    className={`checkbox__item ${isActive ? "active" : ""}`}
-                  >
-                    <input
-                      type="checkbox"
-                      className="checkbox__input"
-                      id="checkbox"
-                    />
-                    work
-                  </label>
-                  <label
-                    onClick={handleClick}
-                    className={`checkbox__item ${isActive ? "active" : ""}`}
-                  >
-                    <input
-                      type="checkbox"
-                      name=""
-                      id="checkbox"
-                      className="checkbox__input"
-                    />
-                    <p>study</p>
-                  </label>
-                  <label
-                    onClick={handleClick}
-                    className={`checkbox__item ${isActive ? "active" : ""}`}
-                  >
-                    <input
-                      type="checkbox"
-                      id="checkbox"
-                      className="checkbox__input"
-                    />
-                    entertainment
-                  </label>
-                  <label
-                    onClick={handleClick}
-                    className={`checkbox__item ${isActive ? "active" : ""}`}
-                  >
-                    <input
-                      type="checkbox"
-                      name=""
-                      id="checkbox"
-                      className="checkbox__input"
-                    />
-                    <p>family</p>
-                  </label>
-                </div>
+                <ul className="checkbox__type">
+                  {checkboxLabels.map((item) => (
+                    <Checkbox item={item} key={item.id} />
+                  ))}
+                </ul>
                 <label className="checkbox__hide">
                   <input type="checkbox" />
                   <p>Hide done tasks</p>

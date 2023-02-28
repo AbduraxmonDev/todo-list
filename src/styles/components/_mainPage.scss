@@ -1,9 +1,13 @@
 .main {
-  &__content {
-  }
-
   &__header {
     @include flex();
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    background-color: $whiteBg;
+    box-shadow: 0px 0px 5px 0px black;
+    z-index: 2;
   }
 
   &__btn {
@@ -15,65 +19,60 @@
 
   &__body {
     @include flex();
+    padding-top: 40px;
+    // background: red;
   }
 
   .checkbox {
     margin-top: 20px;
     position: sticky;
 
-    &__type {
-      @include flex();
-      flex-wrap: wrap;
+    &__list {
+      @include flex(center, flex-start);
+      gap: 5px;
+      padding: 7px 10px;
+      cursor: pointer;
+      border-radius: $borderRad;
+      user-select: none;
+      margin-block: 10px;
+      // width: 100%;
+      &.active {
+        background-color: $lightGray;
+      }
     }
 
     &__item {
       @include flex();
-      gap: 5px;
-      cursor: pointer;
-      padding: 7px 10px;
-      border-radius: $borderRad;
-      user-select: none;
-
-      &.active {
-        background: red;
-      }
-
-      & p {
-        font-size: $textSize12;
-      }
-
-      &:not(last-child) {
-        margin: 5px;
-      }
     }
+
     &__input {
       appearance: none;
       width: 18px;
       height: 18px;
       border: 1px solid transparent;
       border-radius: 50px;
-      background: indigo;
       cursor: pointer;
-      &:nth-child(1) {
-        background: blue;
-      }
     }
 
     &__hide {
-      display: none;
+      @include flex(center, space-evenly);
+      margin-top: 100px;
+      gap: 5px;
+      user-select: none;
+      cursor: pointer;
+      & input {
+        width: 18px;
+        height: 18px;
+      }
     }
-    @media screen and (min-width: 500px) {
+    @media screen and (max-width: 600px) {
       &__type {
-        align-items: flex-start;
-        flex-direction: column;
+        @include flex();
+        flex-wrap: wrap;
       }
 
       &__hide {
-        @include flex();
-        margin-top: 100px;
-        gap: 5px;
-        user-select: none;
-        cursor: pointer;
+        display: none;
       }
     }
   }
