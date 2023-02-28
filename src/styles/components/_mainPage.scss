@@ -41,6 +41,11 @@
       }
     }
 
+    &__type {
+      @include flex(flex-start);
+      flex-direction: column;
+    }
+
     &__item {
       @include flex();
     }
