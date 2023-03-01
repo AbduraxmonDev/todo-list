@@ -1,0 +1,45 @@
+.todo {
+  max-width: 500px !important;
+  width: 100%;
+  background-color: $yellowBg;
+  padding: 25px;
+  border-radius: $borderRad;
+  height: fit-content;
+  @include flex(normal);
+  flex-direction: column;
+  &.active {
+    text-decoration: line-through;
+  }
+  &__header {
+    @include flex();
+    margin-bottom: 30px;
+    & button {
+      background: none;
+      border: 1px solid transparent;
+    }
+  }
+
+  &__menu {
+    rotate: 90deg;
+    width: 25px;
+  }
+
+  &__body {
+    margin-bottom: 30px;
+  }
+
+  &__footer {
+    @include flex();
+  }
+
+  &__type {
+    @include flex();
+    gap: 5px;
+  }
+
+  .circle {
+    width: 25px !important;
+    height: 25px !important;
+    border-radius: 50%;
+  }
+}

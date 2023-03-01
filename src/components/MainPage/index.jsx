@@ -1,32 +1,8 @@
 import React from "react";
 import Checkbox from "../Checkbox";
-
+import ToDo from "../ToDo";
+import { checkboxLabels, toDoData } from "../../data";
 function MainPage() {
-  
-
-  const checkboxLabels = [
-    {
-      id: 1,
-      name: "work",
-      color: "#cbc4ff",
-    },
-    {
-      id: 2,
-      name: "study",
-      color: "#c8e3f7",
-    },
-    {
-      id: 3,
-      name: "entertainment",
-      color: "#ffc3c6",
-    },
-    {
-      id: 4,
-      name: "family",
-      color: "#d3f1d0",
-    },
-  ];
-
   return (
     <>
       <div className="main">
@@ -44,11 +20,16 @@ function MainPage() {
                   {checkboxLabels.map((item) => (
                     <Checkbox item={item} key={item.id} />
                   ))}
+                  <label className="checkbox__hide">
+                    <input type="checkbox" />
+                    <p>Hide done tasks</p>
+                  </label>
                 </ul>
-                <label className="checkbox__hide">
-                  <input type="checkbox" />
-                  <p>Hide done tasks</p>
-                </label>
+              </div>
+              <div className="todo__list">
+                {toDoData.map((element) => (
+                  <ToDo element={element} key={element.id} />
+                ))}
               </div>
             </div>
           </div>

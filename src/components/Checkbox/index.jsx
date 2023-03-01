@@ -22,7 +22,7 @@ function Checkbox({ item }) {
           className="checkbox__input"
           style={{ backgroundColor: item.color }}
         />
-        <label htmlFor={item.id} className="checkbox__item active">
+        <label htmlFor={item.id} className="checkbox__item">
           {item.name}
         </label>
       </li>
