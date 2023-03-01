@@ -1,117 +1,107 @@
-// .modal {
-//   padding: 20px 30px;
-//   max-width: 1000px;
-//   width: 100%;
-//   margin: 0 auto;
-//   background: $whiteBg;
-//   box-shadow: 1px 1px 10px 0px $darkGray;
-//   border-radius: 20px;
-//   .error__add {
-//     font-size: 12px;
-//     color: red;
-//     opacity: 0.8;
-//     display: none;
-//   }
-//   &__header {
-//     @include flex();
-//     margin-bottom: 20px;
+.modal {
+  padding: 20px 30px;
+  max-width: 900px;
+  width: 100%;
+  height: fit-content;
+  margin: 0 auto;
+  background: $whiteBg;
+  box-shadow: 1px 1px 10px 0px $darkGray;
+  border-radius: 20px;
+  position: absolute;
+  top: 100px;
+  // right: 0;
+  // left: 0;
+  z-index: 2;
+  @media screen and (max-width: 600px) {
+    top: 0;
+    height: 100%;
+    border-radius: 0;
+  }
+  .error__add {
+    font-size: $textSize12;
+    color: red;
+    opacity: 0.8;
+    // display: none;
+  }
+  &__header {
+    @include flex();
+    margin-bottom: 20px;
 
-//     &-add {
-//       background-color: $darkGray;
-//       color: $whiteBg;
-//       padding: 15px 50px;
-//       border: 1px solid transparent;
-//       border-radius: 15px;
-//       font-size: $textSize;
-//       transition: $transition;
+    &-add {
+      background-color: $darkGray;
+      color: $whiteBg;
+      padding: 15px 50px;
+      border: 1px solid transparent;
+      border-radius: 15px;
+      font-size: $textSize12;
+      transition: $transition;
 
-//       &:hover {
-//         background: $darkGrayHover;
-//       }
-//     }
+      &:hover {
+        background: $darkGrayHover;
+      }
+    }
 
-//     &-cancel {
-//       background: none;
-//       border: 1px solid transparent;
-//       font-size: $textSize;
-//       color: $darkGray;
-//     }
-//   }
+    &-cancel {
+      background: none;
+      border: 1px solid transparent;
+      font-size: $textSize12;
+      color: $darkGray;
+    }
+  }
 
-//   &__body {
-//     .form {
-//       @include flex(flex-start);
-//       flex-direction: column;
-//       gap: 20px;
-//       margin-bottom: 20px;
-//       &__header-title {
-//         margin-bottom: 5px;
-//       }
+  &__body {
+    .form {
+      @include flex(normal);
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 20px;
+      width: 100% !important;
+      &__header-title {
+        margin-bottom: 5px;
+      }
 
-//       &__header-input {
-//         width: 540px;
-//         max-width: 540px;
-//         height: 40px;
-//         border: 1px solid transparent;
-//         border-radius: 10px;
-//         background: $bgcolor;
-//         font-size: $textSize;
-//         font-family: "Kaushan Script", cursive;
-//         padding: 0 10px 0 10px;
-//       }
+      &__header-input {
+        // display: block;
+        width: 100% !important;
+        height: 40px;
+        border: 1px solid transparent;
+        border-radius: 10px;
+        background: $bgcolor;
+        font-size: $textSize12;
+        font-family: "Kaushan Script", cursive;
+        padding: 0 10px 0 10px;
+      }
 
-//       &__body-title {
-//         margin-bottom: 5px;
-//       }
-//       &__body-input {
-//         resize: none;
-//         width: 540px;
-//         border: 1px solid transparent;
-//         border-radius: 10px;
-//         background: $bgcolor;
-//         font-size: $textSize;
-//         font-family: "Kaushan Script", cursive;
-//         padding: 10px;
-//       }
-//     }
-//   }
+      &__body-title {
+        margin-bottom: 5px;
+      }
+      &__body-input {
+        resize: none;
+        width: 100% !important;
+        border: 1px solid transparent;
+        border-radius: 10px;
+        background: $bgcolor;
+        font-size: $textSize12;
+        font-family: "Kaushan Script", cursive;
+        padding: 10px;
+      }
+    }
+  }
 
-//   &__footer {
-//     &-title {
-//       margin-bottom: 5px;
-//     }
-//     &-buttons {
-//       @include flex(center, flex-start);
-//       gap: 50px;
-//       .button__item {
-//         @include flex();
-//         gap: 10px;
-//         cursor: pointer;
-//         padding: 5px;
-//         border-radius: 10px;
-//         &.active {
-//           // background: $bgcolor;
-//           background: red;
-//         }
-//         .circle {
-//           display: flex;
-//           width: 20px !important;
-//           height: 20px;
-//           border-radius: 50%;
-//         }
-//         .type-work {
-//           background-color: $lightViolet;
-//         }
-//         .type-study {
-//           background-color: $lightBlue;
-//         }
-//         .type-entertainment {
-//           background-color: $lightRed;
-//         }
-//         .type-family {
-//           background-color: $lightGreen;
-//         }
-//       }
-//     }
-//   }
-// }
+  &__footer {
+    &-title {
+      margin-bottom: 5px;
+    }
+    &-buttons {
+      @include flex(center, flex-start);
+      gap: 50px;
+      .button__item {
+        @include flex();
+        gap: 10px;
+        cursor: pointer;
+        padding: 5px;
+        border-radius: 10px;
+      }
+    }
+  }
+}

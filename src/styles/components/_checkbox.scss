@@ -1,0 +1,36 @@
+.checkbox {
+  margin-top: 20px;
+  position: sticky;
+
+  &__list {
+    @include flex(center, flex-start);
+    gap: 5px;
+    padding: 7px 10px;
+    border-radius: $borderRad;
+    user-select: none;
+    margin-block: 10px;
+    transition: $transition;
+    &.active {
+      background-color: $bgcolor;
+    }
+  }
+
+  &__type {
+    @include flex(flex-start);
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  &__item {
+    @include flex();
+    cursor: pointer;
+  }
+
+  &__input {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 1px solid transparent;
+    border-radius: 50px;
+  }
+}

@@ -2,9 +2,11 @@ import React from "react";
 import Checkbox from "../Checkbox";
 import ToDo from "../ToDo";
 import { checkboxLabels, toDoData } from "../../data";
+import AddPopUp from "../AddPopUp";
 function MainPage() {
   return (
     <>
+      <AddPopUp />
       <div className="main">
         <div className="container">
           <div className="main__content">

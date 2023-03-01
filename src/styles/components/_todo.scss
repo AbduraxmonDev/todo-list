@@ -5,6 +5,7 @@
   padding: 25px;
   border-radius: $borderRad;
   height: fit-content;
+  position: relative;
   @include flex(normal);
   flex-direction: column;
   &.active {
