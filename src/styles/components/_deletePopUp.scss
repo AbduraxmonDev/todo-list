@@ -1,0 +1,55 @@
+.todoDelete {
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.delete__modal {
+  max-width: 400px;
+  width: 100%;
+  min-height: 200px;
+  padding: 20px 30px;
+  background: $whiteBg;
+  box-shadow: 0px 0px 10px 0px $darkGray;
+  border-radius: $borderRad;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  @include flex(normal);
+  flex-direction: column;
+  text-align: center;
+}
+
+.delete__title {
+  h3 {
+    margin-top: 20px;
+  }
+}
+
+.delete__btns {
+  @include flex();
+  .btn {
+    background: none;
+    border: transparent;
+    font-size: $textSize16;
+    color: inherit;
+    padding: 16px 32px;
+    width: 100%;
+    transition: $transition;
+    border-radius: $borderRad;
+    &:hover {
+      background-color: $lightGray;
+      color: $whiteBg;
+    }
+  }
+}
+
+.btn__delete {
+  background: none;
+}

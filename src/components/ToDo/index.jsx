@@ -1,7 +1,7 @@
 import MenuIcon from "../../assets/icons/menu-icon.png";
 import { useRef } from "react";
 import { checkboxLabels } from "../../data";
-// import MenuPopUp from "../MenuPopUp";
+import MenuPopUp from "../MenuPopUp"; 
 
 export default function ToDo({ element }) {
   const toDoRef = useRef();
@@ -26,7 +26,7 @@ export default function ToDo({ element }) {
           <button>
             <img src={MenuIcon} alt="icon" className="todo__menu" />
           </button>
-          {/* <MenuPopUp /> */}
+          <MenuPopUp />
         </div>
         <div className="todo__body">
           <p className="todo__text ">{element.description}</p>
