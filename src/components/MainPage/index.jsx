@@ -4,13 +4,13 @@ import ToDo from "../ToDo";
 import { checkboxLabels, toDoData } from "../../data";
 // import AddPopUp from "../AddPopUp";
 // import EditPopUp from "../EditPopUp/EditPopUp";
-import DeletePopUp from "../DeletePopUp";
+// import DeletePopUp from "../DeletePopUp";
 function MainPage() {
   return (
     <>
-      {/* <AddPopUp />
-      <EditPopUp /> */}
-      <DeletePopUp />
+      {/* <AddPopUp /> */}
+      {/* <EditPopUp /> */}
+      {/* <DeletePopUp /> */}
       <div className="main">
         <div className="container">
           <div className="main__content">

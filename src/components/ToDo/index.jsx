@@ -1,7 +1,7 @@
 import MenuIcon from "../../assets/icons/menu-icon.png";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { checkboxLabels } from "../../data";
-import MenuPopUp from "../MenuPopUp"; 
+import MenuPopUp from "../MenuPopUp";
 
 export default function ToDo({ element }) {
   const toDoRef = useRef();
@@ -18,15 +18,22 @@ export default function ToDo({ element }) {
     return item.color;
   };
 
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <>
       <div className="todo" ref={toDoRef}>
         <div className="todo__header">
           <h3 className="todo__title ">{element.title}</h3>
-          <button>
+          <button onClick={() => setIsOpen(true)}>
             <img src={MenuIcon} alt="icon" className="todo__menu" />
           </button>
-          <MenuPopUp />
+          <MenuPopUp open={isOpen} onClose={() => setIsOpen(false)}>
+            <div className="menu__modal">
+              <button className="menu__btn edit">Edit...</button>
+              <button className="menu__btn delete">Delete</button>
+            </div>
+          </MenuPopUp>
         </div>
         <div className="todo__body">
           <p className="todo__text ">{element.description}</p>
@@ -41,10 +48,10 @@ export default function ToDo({ element }) {
               ></span>
             ))}
           </div>
-          <div onClick={addClass}>
+          <label onClick={addClass}>
             <input type="checkbox" id={element.id} ref={inputRef} />
-            <label htmlFor={element.id}>done</label>
-          </div>
+            <span className="checkbox"></span>done
+          </label>
         </div>
       </div>
     </>
