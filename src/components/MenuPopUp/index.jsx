@@ -1,7 +1,11 @@
 import React from "react";
 
-export default function MenuPopUp({ open, children, onClose }) {
-  if (!open) return null;
+export default function MenuPopUp({ isOpen, setIsOpen, children, onClose }) {
+  if (!isOpen) {
+    return null;
+  } else {
+    setIsOpen(isOpen);
+  }
   return (
     <>
       {/* <button onClick={onClose}>close modal</button> */}

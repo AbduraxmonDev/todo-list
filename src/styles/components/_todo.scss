@@ -47,46 +47,39 @@
   label {
     position: relative;
     user-select: none;
-    &:hover input ~ .checkmark {
-      background-color: #ccc;
+    // @include flex();
+    .checkmark_stem {
+      position: absolute;
+      width: 2px;
+      height: 12px;
+      background-color: $darkGray;
+      left: 10px;
+      top: 2px;
+      rotate: 27deg;
+      border-radius: $borderRad;
+    }
+
+    .checkmark_kick {
+      position: absolute;
+      width: 7px;
+      height: 2px;
+      background-color: $darkGray;
+      left: 2px;
+      top: 11px;
+      border-radius: $borderRad;
+      rotate: 25deg;
+    }
+    .checkbox__tick {
+      width: 20px;
+      height: 20px;
+      border: 2px solid $darkGray;
+      border-radius: $borderRad - 10;
+      left: -25px;
+      bottom: 0;
+      position: absolute;
     }
     input {
-      position: absolute;
-      opacity: 0;
-      cursor: pointer;
-      height: 0;
-      width: 0;
-    }
-    .checkmark {
-      position: absolute;
-      z-index: 3;
-      top: 0;
-      left: 0;
-      height: 25px;
-      width: 25px;
-      background-color: #eee;
-      &:after {
-        content: "";
-        position: absolute;
-        display: none;
-      }
-      &:after {
-        left: 9px;
-        top: 5px;
-        width: 5px;
-        height: 10px;
-        border: solid white;
-        border-width: 0 3px 3px 0;
-        -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-        transform: rotate(45deg);
-      }
-    }
-    input:checked ~ .checkmark {
-      background-color: #2196f3;
-    }
-    input:checked ~ .checkmark:after {
-      display: block;
+      display: none;
     }
   }
 }

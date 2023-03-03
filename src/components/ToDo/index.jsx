@@ -28,7 +28,7 @@ export default function ToDo({ element }) {
           <button onClick={() => setIsOpen(true)}>
             <img src={MenuIcon} alt="icon" className="todo__menu" />
           </button>
-          <MenuPopUp open={isOpen} onClose={() => setIsOpen(false)}>
+          <MenuPopUp isOpen={isOpen} setIsOpen={setIsOpen}>
             <div className="menu__modal">
               <button className="menu__btn edit">Edit...</button>
               <button className="menu__btn delete">Delete</button>
@@ -50,7 +50,8 @@ export default function ToDo({ element }) {
           </div>
           <label onClick={addClass}>
             <input type="checkbox" id={element.id} ref={inputRef} />
-            <span className="checkbox"></span>done
+            <span className="checkbox__tick"></span>
+            done
           </label>
         </div>
       </div>

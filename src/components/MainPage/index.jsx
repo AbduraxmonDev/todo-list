@@ -28,6 +28,10 @@ function MainPage() {
                   ))}
                   <label className="checkbox__hide">
                     <input type="checkbox" />
+                    <span className="checkbox__tick">
+                      <div class="checkmark_stem"></div>
+                      <div class="checkmark_kick"></div>
+                    </span>
                     <p>Hide done tasks</p>
                   </label>
                 </ul>
