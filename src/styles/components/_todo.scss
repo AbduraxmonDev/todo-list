@@ -47,39 +47,25 @@
   label {
     position: relative;
     user-select: none;
-    // @include flex();
-    .checkmark_stem {
-      position: absolute;
-      width: 2px;
-      height: 12px;
-      background-color: $darkGray;
-      left: 10px;
-      top: 2px;
-      rotate: 27deg;
-      border-radius: $borderRad;
-    }
+  }
 
-    .checkmark_kick {
-      position: absolute;
-      width: 7px;
-      height: 2px;
-      background-color: $darkGray;
-      left: 2px;
-      top: 11px;
-      border-radius: $borderRad;
-      rotate: 25deg;
-    }
-    .checkbox__tick {
-      width: 20px;
-      height: 20px;
-      border: 2px solid $darkGray;
-      border-radius: $borderRad - 10;
-      left: -25px;
-      bottom: 0;
-      position: absolute;
-    }
-    input {
-      display: none;
-    }
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  span {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid red;
+    position: relative;
+    border-radius: 5px;
+  }
+
+  input[type="checkbox"]:checked + span::before {
+    position: absolute;
+    content: "\2714";
+    top: -2px;
+    left: 3px;
   }
 }
