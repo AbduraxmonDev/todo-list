@@ -1,9 +1,7 @@
 .main {
-  // opacity: 0.4;
   position: absolute;
   width: 100%;
   z-index: 10;
-  // background: rgba(0, 0, 0, 0.35);
   &__header {
     @include flex();
     background-color: $whiteBg;
@@ -47,9 +45,6 @@
       user-select: none;
       margin-block: 10px;
       transition: $transition;
-      &.active {
-        background-color: $bgcolor;
-      }
     }
 
     &__type {
@@ -78,9 +73,23 @@
       gap: 5px;
       user-select: none;
       cursor: pointer;
-      & input {
-        width: 18px;
-        height: 18px;
+      position: relative;
+      & input[type="checkbox"] {
+        display: none;
+      }
+      .checkbox__tick {
+        display: block;
+        width: 20px;
+        height: 20px;
+        border: 1px solid $darkGray;
+        border-radius: $borderRad - 10;
+      }
+
+      & input[type="checkbox"]:checked + .checkbox__tick::before {
+        position: absolute;
+        content: "\2714";
+        top: 0;
+        left: 4px;
       }
     }
     @media screen and (max-width: 600px) {

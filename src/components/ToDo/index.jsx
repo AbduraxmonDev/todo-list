@@ -1,17 +1,11 @@
 import MenuIcon from "../../assets/icons/menu-icon.png";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { checkboxLabels } from "../../data";
 import MenuPopUp from "../MenuPopUp";
 
 export default function ToDo({ element }) {
-  const toDoRef = useRef();
-  const inputRef = useRef();
-  function addClass(e) {
-    e.preventDefault();
-    toDoRef.current.classList.toggle("active");
-    if (inputRef.current.checked) {
-    }
-  }
+
+ 
 
   const selectItem = (id, arr) => {
     const item = arr.find((el) => el.id === id);
@@ -22,7 +16,7 @@ export default function ToDo({ element }) {
 
   return (
     <>
-      <div className="todo" ref={toDoRef}>
+      <div className="todo" >
         <div className="todo__header">
           <h3 className="todo__title ">{element.title}</h3>
           <button onClick={() => setIsOpen(true)}>
@@ -48,10 +42,10 @@ export default function ToDo({ element }) {
               ></span>
             ))}
           </div>
-          <label onClick={addClass}>
-            <input type="checkbox" id={element.id} ref={inputRef} />
-            <span className="checkbox__tick"></span>
-            done
+          <label className="checkbox__done" >
+            <input type="checkbox" />
+            <span className="checkbox__ticked"></span>
+            <p>done</p>
           </label>
         </div>
       </div>

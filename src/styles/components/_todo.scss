@@ -8,9 +8,7 @@
   position: relative;
   @include flex(normal);
   flex-direction: column;
-  &.active {
-    text-decoration: line-through;
-  }
+
   &__header {
     @include flex();
     margin-bottom: 30px;
@@ -19,7 +17,11 @@
       border: 1px solid transparent;
     }
   }
-
+  &__title {
+    &.active {
+      text-decoration: line-through;
+    }
+  }
   &__menu {
     rotate: 90deg;
     width: 25px;
@@ -44,28 +46,29 @@
     border-radius: 50%;
   }
 
-  label {
+  .checkbox__done {
+    @include flex();
     position: relative;
+    gap: 5px;
     user-select: none;
-  }
+    & input[type="checkbox"] {
+      display: none;
+    }
+    .checkbox__ticked {
+      display: block;
+      width: 20px;
+      height: 20px;
+      border: 1px solid $darkGray;
+      border-radius: $borderRad - 10;
+      position: absolute;
+      right: 45px;
+    }
 
-  input[type="checkbox"] {
-    display: none;
-  }
-
-  span {
-    display: block;
-    width: 20px;
-    height: 20px;
-    border: 1px solid red;
-    position: relative;
-    border-radius: 5px;
-  }
-
-  input[type="checkbox"]:checked + span::before {
-    position: absolute;
-    content: "\2714";
-    top: -2px;
-    left: 3px;
+    & input[type="checkbox"]:checked + .checkbox__ticked::before {
+      position: absolute;
+      content: "\2714";
+      left: 3px;
+      top: -2px;
+    }
   }
 }
