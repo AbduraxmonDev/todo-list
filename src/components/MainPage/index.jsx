@@ -9,7 +9,7 @@ function MainPage() {
   const myFunk = () => {
     setClose(false);
   };
-  
+  document.body.style.overflow = "auto";
   return (
     <>
       {close ? <AddPopUp myFunk={myFunk} /> : ""}
