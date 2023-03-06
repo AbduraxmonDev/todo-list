@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import Checkbox from "../Checkbox";
 import ToDo from "../ToDo";
 import { checkboxLabels, toDoData } from "../../data";
-// import AddPopUp from "../AddPopUp";
-// import EditPopUp from "../EditPopUp/EditPopUp";
+import AddPopUp from "../AddPopUp";
 // import DeletePopUp from "../DeletePopUp";
 function MainPage() {
+  const [close, setClose] = useState(false);
+  const myFunk = () => {
+    setClose(false);
+  };
+  
   return (
     <>
-      {/* <AddPopUp /> */}
-      {/* <EditPopUp /> */}
+      {close ? <AddPopUp myFunk={myFunk} /> : ""}
+
       {/* <DeletePopUp /> */}
       <div className="main">
         <div className="container">
@@ -18,7 +22,9 @@ function MainPage() {
               <a href="/">
                 <h1 className="main__title">todo</h1>
               </a>
-              <button className="main__btn">+</button>
+              <button className="main__btn" onClick={() => setClose(true)}>
+                +
+              </button>
             </div>
             <div className="main__body">
               <div className="checkbox">

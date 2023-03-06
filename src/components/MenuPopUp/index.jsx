@@ -1,19 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
+import EditPopUp from "../EditPopUp/EditPopUp";
 
-export default function MenuPopUp({ isOpen, setIsOpen, children, onClose }) {
-  if (!isOpen) {
-    return null;
-  } else {
-    setIsOpen(isOpen);
-  }
+export default function MenuPopUp() {
+  const [edit, setEdit] = useState(false);
+  const myEdit = () => {
+    setEdit(false);
+  };
   return (
     <>
-      {/* <button onClick={onClose}>close modal</button> */}
-      {children}
-      {/* <div className="menu__modal" ref={menuRef}>
-        <button className="menu__btn edit">Edit...</button>
+      {edit ? <EditPopUp myEdit={myEdit} /> : ""}
+
+      <div className="menu__modal">
+        <button className="menu__btn edit" onClick={() => setEdit(true)}>
+          Edit...
+        </button>
         <button className="menu__btn delete">Delete</button>
-      </div> */}
+      </div>
     </>
   );
 }

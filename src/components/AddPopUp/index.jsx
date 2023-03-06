@@ -1,13 +1,24 @@
 import React from "react";
 import Checkbox from "../Checkbox";
 import { checkboxLabels } from "../../data";
-function AddPopUp() {
+function AddPopUp({ myFunk }) {
+  // console.log(props);
+  const closeBtn = () => {
+    myFunk();
+  };
   document.body.style.overflow = "hidden";
   return (
-    <div className="myModal">
-      <div className="modal">
+    <div className="myModal" onClick={closeBtn}>
+      <div
+        className="modal"
+        onClick={(e) => {
+          e.stopPropagation();
+        }}
+      >
         <div className="modal__header">
-          <button className="modal__header-cancel modal-btn">Cancel</button>
+          <button className="modal__header-cancel modal-btn" onClick={closeBtn}>
+            Cancel
+          </button>
           <button className="modal__header-add modal-btn">Add</button>
         </div>
         <div className="modal__body">

@@ -1,14 +1,27 @@
 import React from "react";
 import Checkbox from "../Checkbox";
 import { checkboxLabels } from "../../data";
-function EditPopUp() {
+function EditPopUp({ myEdit }) {
+  const showEdit = () => {
+    myEdit();
+  };
   document.body.style.overflow = "hidden";
+
   return (
-    <div className="myModal">
-      <div className="modal">
+    <div className="myModal" onClick={showEdit}>
+      <div
+        className="modal"
+        onClick={(e) => {
+          e.stopPropagation();
+        }}
+      >
         <div className="modal__header">
-          <button className="modal__header-cancel modal-btn">Cancel</button>
-          <button className="modal__header-add modal-btn">Edit</button>
+          <button className="modal__header-cancel modal-btn" onClick={showEdit}>
+            Cancel
+          </button>
+          <button className="modal__header-add edit__btn modal-btn">
+            Edit
+          </button>
         </div>
         <div className="modal__body">
           <form action="" className="form">

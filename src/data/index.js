@@ -23,7 +23,7 @@ export const checkboxLabels = [
 
 export const toDoData = [
   {
-    id: 10,
+    id: 1,
     title: "the first todo",
     description:
       "Lorem ipsum dolor sit amet consectetur. Ultrices cras vestibulum dolor neque fames nunc nec. Elementum quam id nec interdum et ut neque montes interdum.",
@@ -31,34 +31,40 @@ export const toDoData = [
     checked: true,
   },
   {
-    id: 11,
+    id: 2,
     title: "the second todo",
     description:
       "Lorem ipsum dolor sdvsdv sdjvnsdjbvsdv sjdbvsjobvsodjv nosdnbvsbdvs sodvbsodvb sit,kfnsdfsdf sdnfosdnfsdnv sdnvoisndvsdovnsdvnsodv sdnvosnvsokdvn konsdvnsdkv amdfdmvfmmet consectetur adipisicing elit. Consectetur reprehenderit nesciunt est iusto dolore doloremque?",
     type: [2, 3],
   },
   {
-    id: 12,
+    id: 3,
     title: "the third todo",
     description:
       "Lorem  sdnvosnvsokdvn konsdvnsdkv amdfdmvfmmet consectetur adipisicing elit. Consectetur reprehenderit nesciunt est iusto dolore doloremque?",
     type: [3, 4],
   },
   {
-    id: 13,
+    id: 4,
     title: "the fourth todo",
     description: "Lorem nesciunt est iusto dolore doloremque?",
     type: [3, 4],
   },
   {
-    id: 13,
+    id: 5,
     title: "the fourth todo",
     description: "Lorem nesciunt est iusto dolore doloremque?",
     type: [3, 4],
   },
   {
-    id: 13,
+    id: 6,
     title: "the fourth todo",
+    description: "Lorem nesciunt est iusto dolore doloremque?",
+    type: [3, 4],
+  },
+  {
+    id: 7,
+    title: "Abduraxmon",
     description: "Lorem nesciunt est iusto dolore doloremque?",
     type: [3, 4],
   },
